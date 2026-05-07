@@ -64,6 +64,53 @@ Please create:
 4. a draft MP4
 ```
 
+## Using Different AI Agents
+
+This repo is not limited to Codex. Codex gets the most native experience because the skill format is built for it, but Claude Code, Cursor, and other agentic coding tools can use the same workflow, scripts, and references.
+
+### Codex
+
+Use the skill directly:
+
+```text
+Use $self-media-video to turn this article into a 45-second short video.
+```
+
+Codex will read `self-media-video/SKILL.md` plus the bundled references and scripts.
+
+### Claude Code
+
+Open the repository in Claude Code and point it at the same workflow files:
+
+```text
+Read README.md, README.zh-CN.md, self-media-video/SKILL.md, and the references folder. Turn this article into a short-video workflow with script.md, segments.json, HyperFrames animation, and ffmpeg composition.
+```
+
+Claude Code can follow the same folder structure and run the helper scripts. If you want, you can also add a `CLAUDE.md` file later for a more opinionated repo-specific prompt.
+
+### Cursor
+
+Open the repo in Cursor and ask it to work from the same source files:
+
+```text
+Use the repository workflow in README.md and self-media-video/SKILL.md to turn this article into a 45-second short video. Generate script.md, segments.json, and a draft MP4.
+```
+
+Cursor works best when you ask it to edit the real project files directly instead of giving it a vague one-shot prompt.
+
+### Other AI Agents
+
+Any agent that can read local files, edit code, and run shell commands can use this workflow. Tell it to:
+
+- read the README and skill files first
+- create or update `script.md`
+- create or update `segments.json`
+- build or edit the HyperFrames project
+- render a draft MP4
+- optionally compose talking-head PIP with ffmpeg
+
+The exact UI may differ, but the workflow does not depend on Codex alone.
+
 ## Example Prompts
 
 ```text

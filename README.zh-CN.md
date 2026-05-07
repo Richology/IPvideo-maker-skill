@@ -68,6 +68,58 @@ Use $self-media-video to turn this article into a 45-second short video.
 4. draft MP4
 ```
 
+## 不同 AI Agent 的用法
+
+这个仓库不只给 Codex 用。Codex 能获得最原生的体验，因为 Skill 格式就是为它设计的，但 Claude Code、Cursor，以及其他能读本地文件、改代码、跑命令的 AI Agent，也都可以直接复用这套工作流。
+
+### Codex
+
+直接使用 Skill：
+
+```text
+Use $self-media-video to turn this article into a 45-second short video.
+```
+
+Codex 会读取 `self-media-video/SKILL.md` 以及对应的 references 和 scripts。
+
+### Claude Code
+
+在 Claude Code 里打开这个仓库，然后让它先读这些文件：
+
+```text
+Read README.md, README.zh-CN.md, self-media-video/SKILL.md, and the references folder. Turn this article into a short-video workflow with script.md, segments.json, HyperFrames animation, and ffmpeg composition.
+```
+
+Claude Code 可以直接沿用同样的目录结构和辅助脚本。如果你希望更贴合 Claude Code，也可以后续再加一个 `CLAUDE.md`。
+
+### Cursor
+
+在 Cursor 里打开仓库后，可以这样指挥它：
+
+```text
+Use the repository workflow in README.md and self-media-video/SKILL.md to turn this article into a 45-second short video. Generate script.md, segments.json, and a draft MP4.
+```
+
+Cursor 最适合的方式，是让它直接编辑真实项目文件，而不是只给一个空泛的一句话提示词。
+
+### 其他 AI Agent
+
+只要一个 AI Agent 能做到下面三件事，就能用这套工作流：
+
+- 读取本地文件
+- 编辑代码或文本
+- 运行 shell 命令
+
+你只需要让它先读 README 和 skill 文件，再按顺序完成：
+
+- 生成或修改 `script.md`
+- 生成或修改 `segments.json`
+- 搭建或修改 HyperFrames 项目
+- 渲染 draft MP4
+- 需要的话再用 ffmpeg 合成头像画中画
+
+所以这套仓库不是 Codex 专用，而是一个多 Agent 都能复用的短视频生产模板。
+
 ## 示例提示词
 
 ```text
@@ -189,4 +241,3 @@ self-media-video/
 ## License
 
 MIT
-
