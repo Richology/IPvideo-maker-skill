@@ -1,0 +1,4 @@
+interface:
+  display_name: "Self-Media Video"
+  short_description: "Turn articles and scripts into social short videos"
+  default_prompt: "Use $self-media-video to turn my article or script into a short video workflow with segments, animation, render, and review steps."
