@@ -1,5 +1,7 @@
 # IP Video Maker Skill
 
+[中文 README](README.zh-CN.md)
+
 A Codex skill for creators who want to turn articles, scripts, screenshots, and reference videos into repeatable short-video production workflows.
 
 It is designed for self-media creators, newsletter writers, indie hackers, educators, and IP builders who want a practical pipeline instead of a one-off prompt.
@@ -183,4 +185,3 @@ self-media-video/
 ## License
 
 MIT
-
